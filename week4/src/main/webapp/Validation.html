@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Validation</title>
+</head>
+	<script type="text/javascript">
+		function CheckForm(){
+			
+			var regId = /^[a-zA-Z|0-9]{5,12}$/; //영문자로 시작되고(^[a-zA-Z) 숫자를 포함하며(|0-9]) 길이가 5 ~ 12자 ({5,12}$) 
+			var regPasswd = /^\d{1,}$/; //숫자로 시작하고 끝나고(^\d$) 1번 이상({1,}) = 숫자만
+			var regName = /^[a-zA-Z가-힣]{2,14}$/; //영문자, 한글만 가능하고(^[a-zA-Z가-힣]*$/) 2 ~ 14자({2,14})  
+			var regPhone1 = /^\d{2,}$/;   // 숫자만 2 ~ 5자     
+			var regPhone2 = /^\d{2,}$/; 
+			var regPhone3 = /^\d{2,}$/;
+			var regEmail = /^[a-zA-Z0-9@.]*$/; //영문자, 숫자, @, . 만 가능함
+			
+			/*뭘 더 하기엔 할게 없어요....*/
+			
+			
+			var form = document.loginForm;
+			
+			var id = form.id.value;
+			var passwd = form.passwd.value;
+			var name = form.name.value;
+			var phone1 = form.phone1.value;
+			var phone2 = form.phone2.value;
+			var phone3 = form.phone3.value;
+			var email = form.email.value;
+			
+			if(!regId.test(id)){
+				alert("아이디를 영문자로 시작하고 숫자를 포함하며 길이가 5 ~ 12자로 해주세요");
+				form.id.select();
+				return;
+			}
+			
+			if(!regPasswd.test(passwd)){
+				alert("비밀번호는 숫자만 입력 가능합니다");
+				form.passwd.select();
+				return;
+			}
+			
+			if(!regName.test(name)){
+				alert("이름은 영문자, 한글로 2에서 14자로 해주세요");
+				form.regName.select();
+				return;
+			}
+			
+			if(!regPhone1.test(phone1)){
+				alert("핸드폰 번호는 숫자만 2자 이상 가능합니다(1번째)");
+				form.regPhone1.select();
+				return;
+			}
+			
+			if(!regPhone2.test(phone2)){
+				alert("핸드폰 번호는 숫자만 2자 이상 가능합니다(2번째)");
+				form.regPhone2.select();
+				return;	
+			}
+			
+			if(!regPhone3.test(phone3)){
+				alert("핸드폰 번호는 숫자만 2자 이상 가능합니다(3번째)");
+				form.regPhone3.select();
+				return;
+			}
+			
+			if(!regEmail.test(email)){
+				alert("이메일은 영문자, 숫자, @, .만 가능합니다");
+				form.regEmail.select();
+				return;
+			}	
+			
+
+			
+		}
+	</script>
+<body>
+	<form name="loginForm" action ="Validation.jsp" method ="post">
+		<p>아이디 : <input type="text" name="id">
+		<p>비밀번호 : <input type="password" name="passwd">
+		<p>이름 : <input type="text" name="name">
+		<p>연락처 : <input type="text" name="phone1">-<input type="text" name="phone2">-<input type="text" name="phone3">
+		<p>이메일 : <input type="email" name="email">
+		<p><input type="submit" value="전송" onclick="CheckForm()">
+	</form
+</body>
+</html>
