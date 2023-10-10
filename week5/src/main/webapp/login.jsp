@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ include file="menu.jsp" %>
 <%
 	Date now = new Date();
 	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -23,4 +24,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
+<%@ include file="footer.jsp" %>
 </html>
