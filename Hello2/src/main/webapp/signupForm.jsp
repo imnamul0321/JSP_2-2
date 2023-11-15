@@ -31,6 +31,13 @@
         <input type="submit" value="회원가입하기">
     </td>
 </tr>
+	<tr>
+		<td colspan=2 align=center height=20>
+			<a href="loginForm.jsp"> 
+			<input type="button" value="로그인으로 다시 돌아가기">
+			</a>
+		</td>
+	</tr>
 </table>
 </form>
 </body>

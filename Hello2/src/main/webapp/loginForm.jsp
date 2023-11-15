@@ -22,6 +22,21 @@
 			<input type="submit" value="로그인하기">
 		</td>
 	</tr>
+	<tr>
+		<td colspan=2 align=center height=20>
+			<a href="signupForm.jsp"> 
+			<input type="button" value="회원가입하기">
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 align=center height=50>
+			<a href="withdrawForm.jsp"> 
+			<input type="button" value="회원탈퇴하기">
+			</a>
+		</td>
+	</tr>
+	<!-- 로그아웃기능 넣어주기 -->
 	</table>
 	</form>
 </body>

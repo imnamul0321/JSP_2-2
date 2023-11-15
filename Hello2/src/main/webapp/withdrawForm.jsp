@@ -19,6 +19,13 @@
 			<input type="submit" value="회원탈퇴하기">
 		</td>
 	</tr>
+			<tr>
+		<td colspan=2 align=center height=50>
+			<a href="loginForm.jsp"> 
+			<input type="button" value="다시 로그인으로">
+			</a>
+		</td>
+	</tr>
 	</table>
 	</form>
 </body>
