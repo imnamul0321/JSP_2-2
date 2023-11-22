@@ -1,32 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="dao.*" %>
+
+<%
+    String uid = (String) session.getAttribute("id");
+    if (uid == null) {
+        response.sendRedirect("loginForm.jsp");
+        return;
+    }
+    session.setAttribute("id", uid);
+
+%>
+   
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-
-<script type="text/javascript">
-	function id_check(id) {
-		if (id == "") {		
-			alert ("ID를 입력하세요");
-			return;
-		}
-	url = "confirmId.jsp?id="+id;
-	window.open(url, "confirm", "width=300, height=200")
-}		
-</script>
-
 </head>
 <body>
-<form action="signup1.jsp" method="post">
+<form action="update.jsp" method="post">
 <table align=center>
-<tr><td colspan=2 align=center height=40><b>회원가입</b><td></tr>
+<tr><td colspan=2 align=center height=40><b>회원정보 수정</b><td></tr>
 <tr>
     <td align=right>아이디&nbsp;</td>
     <td><input type="text" name="id" placeholder="Email address" required></td>
-    <td><input type="button" name="check" onclick="id_check()" value="중복확인"></td> 
-    
 </tr>
 <tr>
     <td align=right>패스워드&nbsp;</td>
@@ -42,17 +39,12 @@
 </tr>
 <tr>
     <td colspan=2 align=center height=50>
-        <input type="submit" value="회원가입하기">
+        <input type="submit" value="회원정보수정하기">
     </td>
 </tr>
-	<tr>
-		<td colspan=2 align=center height=20>
-			<a href="loginForm.jsp"> 
-			<input type="button" value="로그인으로 다시 돌아가기">
-			</a>
-		</td>
-	</tr>
 </table>
 </form>
+
+
 </body>
 </html>
